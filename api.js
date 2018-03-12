@@ -4,6 +4,7 @@ const fs = require("fs");
 const _ = require("lodash");
 const morgan = require("morgan");
 const routeMap = require("./utils/apiConfig");
+const process = require("process");
 
 class Api {
     constructor() {
@@ -25,7 +26,7 @@ class Api {
         _.map(routeMap(), v => {
             this.genericRoute(v.route,v.fileName)
         })
-        this.app.listen(3000, () => {
+        this.app.listen(process.env.PORT || 3000, () => {
             console.log("Server Started");
         })
     }
