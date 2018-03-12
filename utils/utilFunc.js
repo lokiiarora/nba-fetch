@@ -10,7 +10,12 @@ class UtilFunc {
     console.log("Starting the app");
     if(!fs.existsSync(baseDir)){
       fs.mkdirSync(baseDir);
+      console.log("made base dir");
       fs.mkdirSync(baseDir+ "/archive/");
+      console.log("made archive dir");
+      fs.mkdirSync(baseDir+ "/archive/daily/");
+      fs.mkdirSync(baseDir+ "/archive/frequent/");
+      fs.mkdirSync(baseDir+ "/archive/onetime/");
     }
   }
 
