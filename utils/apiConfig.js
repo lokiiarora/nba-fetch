@@ -1,31 +1,31 @@
 const routeMap = () => {
     return [
         {
-            route:'/players',
+            route:'/api/v1/players',
             fileName:'playerFinal.json'
         },
         {
-            route:'/feed',
+            route:'/api/v1/feed',
             fileName:'home_daily.json'
         },
         {
-            route:'/scoreboard',
+            route:'/api/v1/scoreboard',
             fileName:'scoreboard.json'
         },
         {
-            route:'/standings/conf',
+            route:'/api/v1/standings/conf',
             fileName:'standingsConf.json'
         },
         {
-            route:'/standings/div',
+            route:'/api/v1/standings/div',
             fileName:'standingsDivision.json'
         },
         {
-            route:'/today',
+            route:'/api/v1/today',
             fileName:'today.json'
         },
         {
-            route:'/players/landing',
+            route:'/api/v1/players/landing',
             fileName:'playersLanding.json'
         },
     ]
