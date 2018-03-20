@@ -27,7 +27,7 @@ class Api {
             });
         });
         _.map(routeMap(), v => {
-            this.genericRoute(v.route,v.fileName)
+            this.genericRoute("/api/v1/" + v.route,v.fileName)
         });
         this.app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
         this.app.listen(this.port, () => {
