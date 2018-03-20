@@ -5,6 +5,8 @@ const _ = require("lodash");
 const morgan = require("morgan");
 const routeMap = require("./utils/apiConfig");
 const process = require("process");
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 
 class Api {
     constructor() {
@@ -27,6 +29,7 @@ class Api {
         _.map(routeMap(), v => {
             this.genericRoute(v.route,v.fileName)
         });
+        this.app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
         this.app.listen(this.port, () => {
             console.log(`Server Started at ${this.port}`);
         })
