@@ -38,6 +38,7 @@ class Api {
     genericRoute(endpoint, fileName){
         this.app.get(endpoint,(req,res) => {
             const src = fs.createReadStream(this.baseDir + fileName);
+            res.status(200);
             src.pipe(res);
         });
     }
