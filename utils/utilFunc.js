@@ -45,6 +45,7 @@ class UtilFunc {
     });
   }
 
+
   async processShowCaseData(dataToBePicked) {
     const obj = {},
       { count, items } = dataToBePicked;

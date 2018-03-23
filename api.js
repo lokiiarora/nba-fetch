@@ -21,6 +21,10 @@ class Api {
         this.app.use(bodyParser.urlencoded({
             extended: true
         }));
+        this.app.use((req,res,next) => {
+            res.setHeader('Access-Control-Allow-Origin', '*');
+            next();
+        })
         this.app.get("/", (req,res) => {
             res.json({
                 body: "Running all fine tbh"
