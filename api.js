@@ -41,9 +41,11 @@ class Api {
 
     genericRoute(endpoint, fileName){
         this.app.get(endpoint,(req,res) => {
-            const src = fs.createReadStream(this.baseDir + fileName);
+            const src = JSON.parse(fs.readFileSync(this.baseDir + fileName , {
+                encoding: "UTF-8"
+            }));
             res.status(200);
-            src.pipe(res);
+            res.json(src);
         });
     }
 }

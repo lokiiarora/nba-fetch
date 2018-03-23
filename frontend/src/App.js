@@ -8,9 +8,8 @@ class App extends Component {
   componentDidMount = () => {
     console.time("fetch players");
     axios.get("http://nba-fetch.southeastasia.cloudapp.azure.com/api/v1/players").then(res => {
-      let x = JSON.parse(res.data);
       console.timeEnd("fetch players");
-      console.log(x);
+      console.log(res.data);
     })
   }
 
