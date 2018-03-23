@@ -2,8 +2,14 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
-
+import background from './background.worker';
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.backgroundWorker = background();
+    console.log(this.backgroundWorker);
+  }
 
   componentDidMount = () => {
     console.time("fetch players");
