@@ -1,3 +1,4 @@
+@import '~antd/dist/antd.css';
 .App {
   text-align: center;
 }
@@ -13,6 +14,9 @@
   padding: 20px;
   color: white;
 }
+body {
+  background: transparent !important;
+}
 
 .App-title {
   font-size: 1.5em;
@@ -25,4 +29,64 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.homeScreen{
+  min-height: 100vh;
+}
+
+.logo > img{
+  width: auto;
+  height: 64px;
+  padding: 5px;
+}
+
+.logo.ant-menu-item-selected, .logo.ant-menu-item-active{
+  background-color: transparent!important;
+}
+
+.nav-menu { 
+  line-height: 74px;
+}
+
+.main-layout .ant-layout-header {
+  height: 74px;
+  line-height: 74px;
+}
+
+.ant-menu-item-selected , .ant-menu-item-active {
+  background-color: transparent!important;
+  text-decoration: #ffffff underline;
+}
+
+.ant-menu-item {
+  font-size: 18px; 
+  font-weight: 500;
+}
+
+.main-layout{
+  min-height: calc(100vh - 74px);
+  background-color: transparent;
+}
+
+.main-layout.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-hero {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.inner-hero-holder{
+  padding: 20px 40px;
+  width: 100%;
+  text-align: center;
+  font-size: 60px;
+  color: white;
 }

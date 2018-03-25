@@ -169,6 +169,8 @@ class CronTasks {
   }
 
   async fetchScoreBoardData() {
+    const date = new Date();
+    date = date.toISOString().split('T')[0].split("-").join("")
     await request("https://data.nba.net/prod/v2/20180310/scoreboard.json").then(
       res => {
         this.writeAndProcessScoreBoardData(JSON.parse(res));
