@@ -16,6 +16,7 @@
 }
 body {
   background: transparent !important;
+  overflow-x: hidden;
 }
 
 .App-title {
@@ -89,4 +90,60 @@ body {
   text-align: center;
   font-size: 60px;
   color: white;
+}
+
+.card-grid-custom{
+  border: 0!important;
+  border-color: transparent;
+}
+
+.team-logo{
+  height: 120px;
+}
+
+.card-row-headers-region{
+  display: flex;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.vertical-align{
+  height: 120px;
+  font-size: 3.5em;
+}
+
+.timing{
+  text-align: left;
+  font-size: 18px;
+  padding: 5px 20px;
+  margin-bottom: 0;
+}
+
+.venue{
+  padding: 5px 20px;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.standings{
+  padding: 20px 40px;
+}
+
+.scoreboard-home .ant-card.ant-card-contain-grid {
+  border: 0!important;
+}
+
+.scoreboard-home .ant-card.ant-card-contain-grid .ant-card-head {
+  border: 0!important;
+}
+
+.header-row-standings {
+  text-align: center;
+  font-size: 28px;
+  margin: 20px;
+}
+
+.strong-text{
+  font-weight: 600;
 }

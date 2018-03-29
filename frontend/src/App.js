@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import background from './background.worker';
+import background from './workers/background.worker';
 import {
   BrowserRouter as Router,
   Route,
@@ -11,6 +11,9 @@ import TeamsScreen from './screens/TeamsScreen';
 import ScoreboardScreen from './screens/ScoreboardScreen';
 import StandingsPage from './screens/StandingsScreen';
 import SpecificTeamScreen from './screens/SpecificTeamScreen';
+import TimeAgo from 'javascript-time-ago';
+import en from 'javascript-time-ago/locale/en';
+TimeAgo.locale(en)
 class App extends Component {
 
   constructor(props) {
