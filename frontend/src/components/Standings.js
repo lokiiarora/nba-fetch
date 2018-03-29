@@ -43,7 +43,8 @@ class StandingsHomeFeed extends React.Component {
 
   tagData = obj => {
     this.tagThread.postMessage({
-      data: {
+      type: 'tagSmall',
+      payload: {
         player: JSON.parse(window.localStorage.getItem("player")),
         ...obj
       }
@@ -87,7 +88,6 @@ class StandingsHomeFeed extends React.Component {
         <Button onClick={this.goToStandingsPage}>Go to Standings Page</Button>
       </div>
     );
-    console.log(payload.conf.east.slice(0, 5));
     return (
       <section className="standings">
         <Row className="header-row-standings">....</Row>

@@ -10,6 +10,9 @@ self.onmessage = ({data}) => {
             case 'fetchHomeData':
                 fetchHomeData();
                 break;
+            case 'fetchStandingsData':
+                fetchStandingsDataAndResolve()
+                break;
             default: 
                 self.postMessage({
                     type: 'default',
@@ -35,6 +38,28 @@ const fetchInitialPlayer = () => {
                 type: 'error'
             });
         })
+}
+
+const fetchStandingsDataAndResolve = () => {
+    Promise.all(fetchStandingsData()).then(values => {
+        let obj = {
+            div: null,
+            conf: null,
+        };
+        _.map(_.map(values, _ => _.data), (__,index) => {
+            if(index === 0) obj["div"] = __
+            if(index === 1) obj["conf"] = __
+        });
+        self.postMessage({
+            payload: obj,
+            type: 'success'
+        });
+    }).catch(e => {
+        self.postMessage({
+            payload: e,
+            type: 'error'
+        });
+    })
 }
 
 

@@ -147,3 +147,56 @@ body {
 .strong-text{
   font-weight: 600;
 }
+
+.slick-prev:before, .slick-next:before {
+  color:#000000!important;
+  font-size: 30px;
+}
+
+.standings-main{
+  padding: 20px 4em;
+}
+
+.slide-standings{
+  display: flex!important;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide-standings-item{
+  display: flex;
+  flex-direction: column;
+}
+
+.standings-teamTag{
+  width: 10em!important;
+  height: 10em!important;
+}
+
+.slick-disabled {
+  opacity: 0;
+}
+
+.meta{
+  text-align: center;
+}
+
+.standings-loading{
+  min-height: 70vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.large-avatar-teamPage{
+  width: 100%;
+  height:100%;
+}
+
+.avatar-div{
+  padding: 20px;
+}
+
+.teams-main-content{
+  padding: 20px 5em;
+}
