@@ -200,3 +200,73 @@ body {
 .teams-main-content{
   padding: 20px 5em;
 }
+
+.align-left.header-row-standings{
+  text-align: left;
+  padding: 0 2em;
+}
+
+.align-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-div{
+  padding: 0 20px;
+  flex-direction: column;
+  text-align: center;
+}
+
+.full-flex {
+  width: 100%;
+  height: 100%;
+}
+
+.avatar-div p {
+  font-size: 16px;
+  margin: 5px;
+}
+
+.success {
+  color: rgba(0,255,0,0.95);
+}
+
+.loss {
+  color: rgba(255,0,0,0.95)
+}
+
+.player-headshots-tuple{
+  flex-direction: column;
+  padding: 0.5em;
+}
+.eightypercent {
+  width: 80%;
+  height: 80%;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.headshot-div {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.small-absolute{
+  position: relative;
+  right: 0;
+}
+
+.name {
+  font-size: 18px;
+}
+
+a {
+  color: black;
+}
+
+.watch-links {
+  color: blue;
+}

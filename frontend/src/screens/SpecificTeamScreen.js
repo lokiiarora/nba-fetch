@@ -1,5 +1,6 @@
 import React from "react";
-import { Layout } from "antd";
+import { Layout, Row, Icon, Avatar, Col, Carousel } from "antd";
+import { Link } from "react-router-dom";
 import Banner from "../components/Banner";
 import CustomFooter from "../components/CustomFooter";
 import tagManager from "../workers/tag.worker";
@@ -19,6 +20,18 @@ class SpecificTeamScreen extends React.Component {
       }
     };
   }
+
+  carouselSettings = {
+    dots: false,
+    arrows: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: false,
+    prevArrow: <Icon type="left-circle" />,
+    nextArrow: <Icon type="right-circle" />
+  };
 
   componentDidMount = () => {
     this.initTasks();
@@ -57,12 +70,85 @@ class SpecificTeamScreen extends React.Component {
   };
 
   renderMainContent = () => {
-    const { loading } = this.state;
+    const { loading, payload } = this.state;
+    const { teamID } = this.props.match.params;
 
     if (!loading) {
       return (
         <div className="holder">
           <Banner src={BannerSrc} />
+          <Row align="left" className="header-row-standings align-left">
+            <Link to="/teams">
+              <Icon type="left" />Go Back to Teams
+            </Link>
+          </Row>
+          <Row align="center" className="header-row-standings align-center">
+            <Col span={6} className="avatar-div">
+              <Avatar
+                className="full-flex"
+                src={`https://cdn.nba.net/assets/logos/teams/secondary/web/${teamID}.svg`}
+              />
+              <strong>
+                {payload.roster[0][0].teamData.city}{" "}
+                {payload.roster[0][0].teamData.nickname}{" "}
+              </strong>
+              <p>
+                Division Rank: <strong>{payload.metaData.divRank}</strong>
+              </p>
+              <p>
+                Conference Rank: <strong>{payload.metaData.confRank}</strong>
+              </p>
+              <p>
+                <strong className="success">{payload.metaData.win}</strong> wins
+                this season
+              </p>
+              <p>
+                <strong className="loss">{payload.metaData.loss}</strong> losses
+                this season
+              </p>
+            </Col>
+          </Row>
+          <Row className="header-row-standings align-left">
+            <strong>Roster</strong>
+          </Row>
+          <Row
+            gutter={40}
+            className="content-row-standings standings standings-main"
+          >
+            <Carousel {...this.carouselSettings}>
+              {payload.roster.map((playerTuple, index) => {
+                console.log(playerTuple);
+                return (
+                  <div
+                    key={`Headshots-${index}`}
+                    className="player-headshots-tuple"
+                  >
+                    <div className="headshot-div">
+                      <Avatar
+                        className="full-flex eightypercent"
+                        src={`http://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${
+                          playerTuple[0].personId
+                        }.png`}
+                      />
+                      <p className="name">{playerTuple[0].firstName}{" "}{playerTuple[0].lastName}</p>
+                    </div>
+                    {playerTuple[1] && (
+                      <div className="headshot-div">
+                        <Avatar
+                          className="full-flex eightypercent"
+                          src={`http://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${
+                            playerTuple[1].personId
+                          }.png`}
+                        />
+                        <p className="name">{playerTuple[1].firstName}{" "}{playerTuple[1].lastName}</p>
+                        
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </Carousel>
+          </Row>
         </div>
       );
     }

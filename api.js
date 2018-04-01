@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const fs = require("fs");
 const _ = require("lodash");
 const morgan = require("morgan");
+const path = require("path");
 const routeMap = require("./utils/apiConfig");
 const process = require("process");
 const swaggerUi = require('swagger-ui-express');
@@ -25,7 +26,7 @@ class Api {
             res.setHeader('Access-Control-Allow-Origin', '*');
             next();
         })
-        this.app.get("/", (req,res) => {
+        this.app.get("/health", (req,res) => {
             res.json({
                 body: "Running all fine tbh"
             });
@@ -33,7 +34,10 @@ class Api {
         _.map(routeMap(), v => {
             this.genericRoute(v.route,v.fileName)
         });
-        this.app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+        this.app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+        this.app.get("/*", (req,res) => {
+            res.sendFile(path.join(__dirname,"./build/",req.url))
+        })
         this.app.listen(this.port, () => {
             console.log(`Server Started at ${this.port}`);
         })

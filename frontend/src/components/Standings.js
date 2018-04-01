@@ -90,18 +90,18 @@ class StandingsHomeFeed extends React.Component {
     );
     return (
       <section className="standings">
-        <Row className="header-row-standings">....</Row>
+        <Row className="header-row-standings">NBA Conference Standings Highlight</Row>
         <Row gutter={40} className="content-row-standings">
           <StandingsAdapter header={`NBA Conference East Standings`} loading={loading} data={payload.conf.east} loadMoreBtn={loadMore} large />
           <StandingsAdapter header={`NBA Conference West Standings`} loading={loading} data={payload.conf.west} loadMoreBtn={loadMore} large />
         </Row>
-        <Row className="header-row-standings">....</Row>
+        <Row className="header-row-standings">NBA East Division Standings Highlight</Row>
         <Row gutter={40} className="content-row-standings">
           <StandingsAdapter header={`NBA Division East Atlantic Standings`} loading={loading} data={payload.div.east.atlantic} loadMoreBtn={loadMore} />
           <StandingsAdapter header={`NBA Division East Central Standings`} loading={loading} data={payload.div.east.central} loadMoreBtn={loadMore} />
           <StandingsAdapter header={`NBA Division East SouthEast Standings`} loading={loading} data={payload.div.east.southeast} loadMoreBtn={loadMore} />
         </Row>
-        <Row className="header-row-standings">....</Row>
+        <Row className="header-row-standings">NBA West Division Standings Highlight</Row>
         <Row gutter={40} className="content-row-standings"> 
           <StandingsAdapter header={`NBA Division West Northwest Standings`} loading={loading} data={payload.div.west.northwest} loadMoreBtn={loadMore} />
           <StandingsAdapter header={`NBA Division West Pacific Standings`} loading={loading} data={payload.div.west.pacific} loadMoreBtn={loadMore} />

@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Carousel, Col, Avatar } from "antd";
-import _ from 'underscore';
+import { Link } from "react-router-dom";
+import _ from "underscore";
 
 export default ({ data, settings, superIndex }) => (
   <Row gutter={40} className="content-row-standings">
@@ -13,18 +14,22 @@ export default ({ data, settings, superIndex }) => (
             span={6}
           >
             <div className="slide-standings-item">
-              <Avatar
-                size="large"
-                className="standings-teamTag"
-                src={`https://cdn.nba.net/assets/logos/teams/secondary/web/${
-                  item.teamTag
-                }.svg`}
-              />
+              <Link to={`/team/${item.teamTag}`}>
+                <Avatar
+                  size="large"
+                  className="standings-teamTag"
+                  src={`https://cdn.nba.net/assets/logos/teams/secondary/web/${
+                    item.teamTag
+                  }.svg`}
+                />
+              </Link>
               <div className="meta">
                 <h3>Rank {index + 1}</h3>
-                <strong>
-                  {item.city} {item.nickname}
-                </strong>
+                <Link to={`/team/${item.teamTag}`}>
+                  <strong>
+                    {item.city} {item.nickname}
+                  </strong>
+                </Link>
                 <p>Win % : {item.winPctV2}</p>
               </div>
             </div>

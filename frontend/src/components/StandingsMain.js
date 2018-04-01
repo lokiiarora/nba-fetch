@@ -88,21 +88,21 @@ class StandingsMain extends React.Component {
     if (!loading) {
       return (
         <div className="inner-standings">
-          <Row className="header-row-standings">....</Row>
+          <Row className="header-row-standings">Conference East Standings</Row>
           <StandingsMainAdapter data={conf.east} superIndex={1} settings={this.carouselSettings} />
-          <Row className="header-row-standings">....</Row>
+          <Row className="header-row-standings">Conference West Standings</Row>
           <StandingsMainAdapter data={conf.west} superIndex={2} settings={this.carouselSettings} />
-          <Row className="header-row-standings">....</Row>
+          <Row className="header-row-standings">Division East Atlantic</Row>
           <StandingsMainAdapter data={div.east.atlantic} superIndex={3} settings={this.carouselSettings} />
-          <Row className="header-row-standings">....</Row>
+          <Row className="header-row-standings">Division East Central</Row>
           <StandingsMainAdapter data={div.east.central} superIndex={4} settings={this.carouselSettings} />
-          <Row className="header-row-standings">....</Row>
+          <Row className="header-row-standings">Division South East</Row>
           <StandingsMainAdapter data={div.east.southeast} superIndex={5} settings={this.carouselSettings} />
-          <Row className="header-row-standings">....</Row>
+          <Row className="header-row-standings">Division North West</Row>
           <StandingsMainAdapter data={div.west.northwest} superIndex={6} settings={this.carouselSettings} />
-          <Row className="header-row-standings">....</Row>
+          <Row className="header-row-standings">Division West Pacific</Row>
           <StandingsMainAdapter data={div.west.pacific} superIndex={7} settings={this.carouselSettings} />
-          <Row className="header-row-standings">....</Row>
+          <Row className="header-row-standings">Division South West</Row>
           <StandingsMainAdapter data={div.west.southwest} superIndex={1} settings={this.carouselSettings} />
         </div>
       );
