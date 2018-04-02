@@ -13,7 +13,7 @@ class Api {
     constructor() {
         this.app = express();
         this.baseDir = __dirname + "/data/";
-        this.port = process.env.PORT || 80;
+        this.port = process.env.PORT || 3000;
     }
 
     initRoutes() {

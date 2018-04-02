@@ -45,9 +45,7 @@ const tagTeamsAndGetRoster = ({ player, id }) => {
 
 const getTeamDataAndResolve = (roster, code) => {
   axios
-    .get(
-      "http://nba-fetch.southeastasia.cloudapp.azure.com/api/v1/standings/conf"
-    )
+    .get("https://nbaproject.lokesh.co/api/v1/standings/conf")
     .then(res => {
       let { east, west } = res.data.data;
       let dataToBeSent = {};
