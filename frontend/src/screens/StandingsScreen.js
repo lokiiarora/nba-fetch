@@ -7,6 +7,7 @@ import CustomFooter from "../components/CustomFooter";
 import BannerSrc from "../standings-banner.png";
 import backgroundWork from "../workers/background.worker";
 import { ClimbingBoxLoader } from "react-spinners";
+import {Helmet} from 'react-helmet';
 
 class StandingsScreen extends React.Component {
   constructor(props) {
@@ -75,6 +76,9 @@ class StandingsScreen extends React.Component {
     const { loading } = this.state;
     return (
       <div className="homeScreen">
+        <Helmet>
+            <title>Standings | NBAProject</title>
+        </Helmet>
         <Layout className="main-layout">
           <Layout.Header>
             <NavbarCustom className="nav-menu" {...this.props} />

@@ -7,7 +7,7 @@ import CustomFooter from '../components/CustomFooter';
 import BannerSrc from '../scores-banner.png';
 import Banner from "../components/Banner";
 import {ClimbingBoxLoader} from 'react-spinners';
-
+import {Helmet} from 'react-helmet';
 
 class ScoreboardScreen extends React.Component {
 
@@ -42,6 +42,9 @@ class ScoreboardScreen extends React.Component {
         const { loading } = this.state;
         return (
             <div className="homeScreen">
+                <Helmet>
+                    <title>Scoreboard | NBAProject</title>
+                </Helmet>
                 <Layout className="main-layout">
                     <Layout.Header>
                         <NavbarCustom className="nav-menu" {...this.props} />

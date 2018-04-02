@@ -7,6 +7,7 @@ import BannerSrc from "../team-banner.png";
 import { ClimbingBoxLoader } from "react-spinners";
 import tagManager from "../workers/tag.worker";
 import NavbarCustom from "../components/Navbar";
+import {Helmet} from 'react-helmet';
 
 class TeamsScreen extends React.Component {
   constructor(props) {
@@ -90,6 +91,9 @@ class TeamsScreen extends React.Component {
     const { loading } = this.state;
     return (
       <div className="homeScreen">
+        <Helmet>
+            <title>Teams | NBAProject</title>
+        </Helmet>
         <Layout className="main-layout">
           <Layout.Header>
             <NavbarCustom className="nav-menu" {...this.props} />

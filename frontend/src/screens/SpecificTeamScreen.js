@@ -7,6 +7,7 @@ import tagManager from "../workers/tag.worker";
 import BannerSrc from "../team-banner.png";
 import { ClimbingBoxLoader } from "react-spinners";
 import NavbarCustom from "../components/Navbar";
+import {Helmet} from 'react-helmet';
 
 class SpecificTeamScreen extends React.Component {
   constructor(props) {
@@ -76,6 +77,9 @@ class SpecificTeamScreen extends React.Component {
     if (!loading) {
       return (
         <div className="holder">
+          <Helmet>
+              <title>{teamID}'s Team | NBAProject</title>
+          </Helmet>
           <Banner src={BannerSrc} />
           <Row align="left" className="header-row-standings align-left">
             <Link to="/teams">
