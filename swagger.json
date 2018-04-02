@@ -1,7 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "Sample data archived and fetched using the NBA.com's JSON APIs",
+    "description":
+      "Sample data archived and fetched using the NBA.com's JSON APIs",
     "version": "1.0.0",
     "title": "NBA Fetch API",
     "contact": {
@@ -12,7 +13,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
   },
-  "host": "nba-fetch.southeastasia.cloudapp.azure.com",
+  "host": "nbaproject.lokesh.co/",
   "basePath": "/api/v1",
   "tags": [
     {
@@ -36,24 +37,16 @@
       "description": "Today's links' data dump"
     }
   ],
-  "schemes": [
-    "http"
-  ],
+  "schemes": ["http"],
   "paths": {
     "/players": {
       "get": {
-        "tags": [
-          "players"
-        ],
+        "tags": ["players"],
         "summary": "Get all player data",
         "description": "",
         "operationId": "getPlayersData",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "Success"
@@ -63,18 +56,12 @@
     },
     "/players/landing": {
       "get": {
-        "tags": [
-          "feed"
-        ],
+        "tags": ["feed"],
         "summary": "Get all landing page player data",
         "description": "",
         "operationId": "getPlayersDataLanding",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "Success"
@@ -84,15 +71,11 @@
     },
     "/feed": {
       "get": {
-        "tags": [
-          "feed"
-        ],
+        "tags": ["feed"],
         "summary": "Get feed data",
         "description": "Returns a map of feed type to data",
         "operationId": "getFeed",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "successful operation"
@@ -102,15 +85,11 @@
     },
     "/scoreboard": {
       "get": {
-        "tags": [
-          "scoreboard"
-        ],
+        "tags": ["scoreboard"],
         "summary": "Get scoreboard data",
         "description": "Returns a map of teams to score",
         "operationId": "getScoreboard",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "successful operation"
@@ -120,15 +99,11 @@
     },
     "/standings/conf": {
       "get": {
-        "tags": [
-          "standings"
-        ],
+        "tags": ["standings"],
         "summary": "Get standing data on the basis of conference",
         "description": "Returns a map of standings to teams",
         "operationId": "getStandingsConf",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "successful operation"
@@ -138,15 +113,11 @@
     },
     "/standings/div": {
       "get": {
-        "tags": [
-          "standings"
-        ],
+        "tags": ["standings"],
         "summary": "Get standing data on the basis of division",
         "description": "Returns a map of standings to teams",
         "operationId": "getStandingsDiv",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "successful operation"
@@ -156,15 +127,11 @@
     },
     "/today": {
       "get": {
-        "tags": [
-          "today"
-        ],
+        "tags": ["today"],
         "summary": "Get today's link dump",
         "description": "Returns a map of link type to link format",
         "operationId": "getToday",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "successful operation"
