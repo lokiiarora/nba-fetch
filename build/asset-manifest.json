@@ -1,11 +1,11 @@
 {
   "main.css": "static/css/main.edda7a8b.css",
   "main.css.map": "static/css/main.edda7a8b.css.map",
-  "main.js": "static/js/main.9abd0fdb.js",
-  "main.js.map": "static/js/main.9abd0fdb.js.map",
-  "static/media/home-banner.png": "static/media/home-banner.2826136c.png",
+  "main.js": "static/js/main.6bfeec35.js",
+  "main.js.map": "static/js/main.6bfeec35.js.map",
+  "static/media/home-banner.png": "static/media/home-banner.8474a3de.png",
   "static/media/logo.png": "static/media/logo.203c62df.png",
-  "static/media/scores-banner.png": "static/media/scores-banner.70683cdd.png",
-  "static/media/standings-banner.png": "static/media/standings-banner.f16bfd4a.png",
-  "static/media/team-banner.png": "static/media/team-banner.c4ae2519.png"
+  "static/media/scores-banner.png": "static/media/scores-banner.8031a12d.png",
+  "static/media/standings-banner.png": "static/media/standings-banner.b9856042.png",
+  "static/media/team-banner.png": "static/media/team-banner.d2347e6e.png"
 }
