@@ -29,6 +29,11 @@ class Api {
       res.set("Content-Encoding", "gzip");
       next();
     });
+    this.app.get("*.css", function(req, res, next) {
+      req.url = req.url + ".gz";
+      res.set("Content-Encoding", "gzip");
+      next();
+    });
     this.app.use(express.static(path.join(__dirname, "build")));
     this.app.use((req, res, next) => {
       res.setHeader("Access-Control-Allow-Origin", "*");
